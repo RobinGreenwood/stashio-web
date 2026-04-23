@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(browse)",
+      "Skill(browse:*)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm)",
+      "Bash(mv .gstack /tmp/.gstack-backup)",
+      "Bash(mv .claude /tmp/.claude-backup)"
+    ]
+  }
+}
