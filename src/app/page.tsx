@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight, Plus } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 import WaveGlobe from "@/components/WaveGlobe";
@@ -47,25 +48,16 @@ const HERO_SOURCE_ICONS = [
 function Navbar() {
   return (
     <nav className="w-full flex items-center justify-between px-6 md:px-10 py-5">
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-1">
         {/* Logo */}
-        <div className="w-8 h-8 rounded-lg bg-foreground flex items-center justify-center">
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-            <path d="M2 17l10 5 10-5" />
-            <path d="M2 12l10 5 10-5" />
-          </svg>
-        </div>
-        <span className="text-lg font-medium tracking-tight">Home Plate</span>
+        <img
+          src="/logo.svg"
+          alt=""
+          width={32}
+          height={32}
+          className="size-8 shrink-0"
+        />
+        <span className="text-lg font-bold tracking-tight">Stashio</span>
       </div>
     </nav>
   );
@@ -196,7 +188,7 @@ function WaitlistForm() {
 
   return (
     <form
-      onSubmit={handleSubmit}
+      // onSubmit={handleSubmit}
       className="flex flex-col sm:flex-row gap-3 w-full max-w-md"
     >
       {/* <input
@@ -226,7 +218,7 @@ function FeatureTicker() {
   ];
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-[11px] uppercase tracking-widest text-zinc-400 animate-fade-in-up-delay-3">
+    <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-[11px] tracking-widest text-zinc-400 animate-fade-in-up-delay-3">
       {features.map((feature, i) => (
         <span key={i} className="flex items-center gap-3">
           {i > 0 && <span className="text-zinc-300">*</span>}
@@ -239,7 +231,7 @@ function FeatureTicker() {
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen max-w-6xl mx-auto bg-white">
       {/* Announcement bar */}
 
       <Navbar />
@@ -252,27 +244,24 @@ export default function Home() {
             <div className="flex flex-col gap-7">
               {/* Badge */}
               <div className="animate-fade-in-up">
-                <span className="inline-flex items-center gap-2 text-sm bg-zinc-300/20 text-zinc-600 font-medium border border-zinc-200 rounded-full px-3 py-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                <span className="inline-flex items-center gap-2 text-sm bg-lime-300/20 text-zinc-600 font-medium border border-lime-500/30 rounded-full px-3 py-1.5">
+                  <span className="w-2 h-2 rounded-full bg-lime-400" />
                   Early access
                 </span>
               </div>
 
               {/* Headline */}
-              <h1 className="font-serif text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] leading-[1.08] tracking-tight font-normal animate-fade-in-up-delay-1">
+              <h1 className="text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] leading-[1.08] tracking-tight font-bold animate-fade-in-up-delay-1">
                 Expand your knowledge
                 <br />
-                <span className="text-zinc-400">with each bookmark.</span>
+                <span className="text-zinc-400">with each save.</span>
               </h1>
 
               {/* Subtitle */}
               <p className="text-base md:text-lg text-zinc-500 leading-relaxed max-w-md animate-fade-in-up-delay-2">
-                <span className="line-through">
-                  The need to keep up with everything.
-                </span>{" "}
-                <br />
-                Save articles, interviews and ideas that fascinate you, and ask
-                big questions when they come up.
+                Stashio if a NotebookLM alternative for personal use. Save
+                articles, interviews and ideas that fascinate you, and ask big
+                questions when they come up.
               </p>
 
               {/* Waitlist form */}
@@ -285,13 +274,19 @@ export default function Home() {
 
             <HeroVisual />
           </div>
-
-          {/* Feature ticker */}
-          <div className="mt-16 md:mt-24 pt-8 border-t border-zinc-100">
-            <FeatureTicker />
-          </div>
         </div>
       </main>
+
+      <footer className="border-t border-border py-8">
+        <div className="mx-auto flex max-w-6xl justify-center px-6 md:px-10">
+          <Link
+            href="/privacy"
+            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Privacy Policy
+          </Link>
+        </div>
+      </footer>
     </div>
   );
 }
