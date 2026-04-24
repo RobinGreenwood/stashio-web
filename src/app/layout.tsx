@@ -20,7 +20,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "HomePlate — Your Personal Knowledge Base",
+  title: "Stash — Chat with your interests",
   description:
     "Bookmark anything online and build a living knowledge base you can actually talk to.",
 };
