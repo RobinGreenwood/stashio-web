@@ -56,18 +56,32 @@ body {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(1deg); }
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(1deg);
+  }
 }
 
 @keyframes glow {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 @keyframes fade-in-up {
@@ -111,6 +125,38 @@ body {
 .animate-fade-in-up-delay-3 {
   animation: fade-in-up 0.8s ease-out 0.4s forwards;
   opacity: 0;
+}
+
+/* Typewriter hero — styles for elements injected via innerHTML */
+@keyframes tw-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.tw-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background: #1a1a1a;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: tw-blink 1s step-end infinite;
+}
+
+.tw-badge {
+  font-weight: 600;
+}
+.tw-badge--lime {
+  color: #4d7c0f; /* lime-700 */
+}
+.tw-badge--amber {
+  color: #b45309; /* amber-700 */
 }
 
 :root {
