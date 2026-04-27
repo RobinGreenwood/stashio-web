@@ -52,9 +52,19 @@ export default function Home() {
             </div>
 
             {/* Headline */}
-            <h1 className="text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] leading-[1.08] tracking-tight font-bold animate-fade-in-up-delay-1">
+            {/* <h1 className="text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] leading-[1.08] tracking-tight font-bold animate-fade-in-up-delay-1">
               Chat with your bookmarks
+            </h1> */}
+            <h1 className="text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] leading-[1.08] tracking-tight font-bold animate-fade-in-up-delay-1 text-center">
+              Build your second brain
             </h1>
+
+            <p className="text-base md:text-lg text-zinc-500 leading-relaxed max-w-xl animate-fade-in-up-delay-1 text-center">
+              Save articles, interviews, and notes that fascinate you with one
+              click,
+              <br />
+              and turn it into personal knowledge you can Q&A anytime.
+            </p>
 
             <div id="waitlist" className="animate-fade-in-up-delay-3">
               <WaitlistForm />
@@ -73,15 +83,12 @@ export default function Home() {
               <TypewriterHero />
             </div>
           </div>
-          <div className="flex flex-col gap-2 items-center justify-center mt-12">
-            <p className="text-base md:text-lg text-zinc-500 leading-relaxed max-w-2xl animate-fade-in-up-delay-2 text-center">
-              Save what fascinates you. Chat with it when you need it.
-            </p>
-          </div>
+
           <div className="flex flex-col gap-2 items-center justify-center mt-12">
             <p className="text-3xl font-bold text-zinc-900 max-w-2xl animate-fade-in-up-delay-2 text-center">
-              Your online activity is a reflection of your unique taste. Now you
-              can interact with it as a unique knowledge base.
+              Your online activity is a reflection of your unique taste and
+              interests. Now you can interact with it as a unique knowledge
+              base.
             </p>
           </div>
         </div>
@@ -115,8 +122,9 @@ export default function Home() {
               Resources
             </p>
             <Link
-              href="/privacy"
+              href="https://chromewebstore.google.com/detail/stashio-%E2%80%94-save-to-stashio/mpmjnbamfgcchldddhheeppgfpmiclej"
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              target="_blank"
             >
               Browser Extension
             </Link>
